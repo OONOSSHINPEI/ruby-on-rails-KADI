@@ -1,0 +1,33 @@
+
+<tbody>
+<thead>
+<h1>Editing Book</h1>
+
+<%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+ </thead>   
+ <td>
+  <h4>タイトル</h4>
+  <%= f.text_field :title %>
+  </td>
+  <td>
+  <h4>本文</h4>
+  <%= f.text_area :body %>
+  </td>
+ <td><%= f.submit 'Update Pack' %></td>
+</tbody>
+<table> 
+ <tfoot>
+     
+  <td><%= link_to "back", bookback_path %></td>
+  <td></td>
+  <td><%= link_to "show", book_path %></td>
+ </tfoot>
+<% end %>
+
+</table> 
+
+ <% if flash[:notice] %>
+     <p id="notice">
+       <%= flash[:notice] %>
+     </p>
+   <% end %>

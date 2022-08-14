@@ -1,0 +1,23 @@
+<table>
+ <thead>
+    <tr>
+<td><h2>Title</h2></td>
+        <td><p><%= @book.title %></p></td>
+    </tr>
+    <tr>
+<td><h2>Body</h2></h2></td>
+        <td><p><%= @book.body %></p>
+    </tr>    
+</table>       
+       
+ <tfoot>
+        <td><%= link_to "Show", edit_book_path(@book.id) %></td>
+        <td><%= link_to "back", bookback_path %></td>
+ </tfoot>    
+ </thead>
+
+ <% if flash[:notice] %>
+     <p id="notice">
+       <%= flash[:notice] %>
+     </p>
+   <% end %>
